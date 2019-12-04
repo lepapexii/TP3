@@ -58,7 +58,7 @@ public class GoodPassword extends AppCompatActivity {
                 }else if(selectedItem.contains("YoungGee")){
                     Intent intent = new Intent(parent.getContext(), CarteYoungGee.class);
                     startActivity(intent);
-                }else if(selectedItem.contains("JoJo")){
+                }else if(selectedItem.contains("Jojo")){
                     Intent intent = new Intent(parent.getContext(), CarteJoJo.class);
                     startActivity(intent);
                 }

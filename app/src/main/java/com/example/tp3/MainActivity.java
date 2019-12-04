@@ -1,5 +1,6 @@
 package com.example.tp3;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -9,14 +10,42 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.tp3.MESSAGE";
-    public SharedPreferences mspNom, mspPass;
+    public SharedPreferences mspNom, mspPass, note;
+    TextView newNote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        newNote = findViewById(R.id.note);
+        note = getPreferences(Context.MODE_PRIVATE);
+        int ok = note.getInt("note",0);
+        String str=Integer.toString(ok);
+        newNote.setText(str);
+
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        note = getPreferences(Context.MODE_PRIVATE);
+        int ok = note.getInt("note",0);
+        String str=Integer.toString(ok);
+        newNote.setText(str);
+    }
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        note = getPreferences(Context.MODE_PRIVATE);
+        int ok = note.getInt("note",0);
+        String str=Integer.toString(ok);
+        newNote.setText(str);
 
     }
 
@@ -46,15 +75,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public static void setDefaults(String key, String value, Context context) {
+    public void setNote() {
+
+        newNote.setText(MainActivity.getDefaults("note",this));
+    }
+
+    public static void setDefaults(String key, int value, Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(key, value);
+        editor.putInt(key, value);
         editor.commit();
     }
 
-    public static String getDefaults(String key, Context context) {
+    public static int getDefaults(String key, Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getString(key, null);
+        return preferences.getInt(key,0);
     }
 }

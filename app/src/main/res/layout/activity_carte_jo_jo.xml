@@ -14,8 +14,10 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:src="@drawable/jojo" />
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/gee"
+            tools:src="@drawable/gee"
+            tools:srcCompat="@drawable/gee" />
 
         <TextView
             android:id="@+id/textView"
@@ -64,6 +66,7 @@
             android:id="@+id/retour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="Retour vers la liste" />
     </LinearLayout>
 

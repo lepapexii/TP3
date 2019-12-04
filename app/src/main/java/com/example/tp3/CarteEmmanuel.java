@@ -16,7 +16,7 @@ public class CarteEmmanuel extends AppCompatActivity {
 
     public void click(View v){
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, GoodPassword.class);
         startActivity(intent);
 
     }

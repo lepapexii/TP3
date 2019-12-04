@@ -64,6 +64,7 @@
             android:id="@+id/retour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="Retour vers la liste" />
     </LinearLayout>
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class CartePhilippe extends AppCompatActivity {
     Double[] reel = new Double[3];
@@ -19,7 +20,11 @@ public class CartePhilippe extends AppCompatActivity {
 
     public void click(View v){
 
-        Intent intent = new Intent(this, MainActivity.class);
+        EditText nv = findViewById(R.id.score);
+        int note = Integer.parseInt(nv.getText().toString()) ;
+        MainActivity.setDefaults("note",note,this);
+
+        Intent intent = new Intent(this, GoodPassword.class);
         startActivity(intent);
 
     }

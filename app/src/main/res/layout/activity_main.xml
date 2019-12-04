@@ -48,5 +48,11 @@
             android:onClick="methodeClic"
             android:text="Soumettre"
             tools:text="Soumettre" />
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="test" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

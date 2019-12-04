@@ -15,7 +15,9 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="185dp"
-            tools:src="@drawable/ok" />
+            app:srcCompat="@mipmap/ic_launcher_round"
+            tools:src="@mipmap/ic_launcher_round"
+            tools:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
             android:id="@+id/textView"
@@ -64,6 +66,7 @@
             android:id="@+id/retour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="Retour vers la liste" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
