@@ -1,5 +1,6 @@
 package com.example.tp3;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -23,16 +25,19 @@ import android.widget.Toast;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class GoodPassword extends AppCompatActivity {
+import static com.example.tp3.MainActivity.tabResultat;
 
+public class GoodPassword extends AppCompatActivity {
+    int compteur =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        // Set the text on a TextView object using a resource ID
+        //Set the text on a TextView object using a resource ID
         ListView lv = findViewById(R.id.listView);
         lv.setClickable(false);
         TextView nom = findViewById(R.id.userName);
@@ -47,18 +52,23 @@ public class GoodPassword extends AppCompatActivity {
                 // Display the selected item text on TextView
 
                 if(selectedItem.contains("Philippe")){
+                    compteur++;
                     Intent intent = new Intent(parent.getContext(), CartePhilippe.class);
                     startActivity(intent);
                 }else if(selectedItem.contains("Emmanuel")) {
+                    compteur++;
                     Intent intent = new Intent(parent.getContext(), CarteEmmanuel.class);
                     startActivity(intent);
                 }else if(selectedItem.contains("Yohan")){
+                    compteur++;
                     Intent intent = new Intent(parent.getContext(), CarteYohan.class);
                     startActivity(intent);
                 }else if(selectedItem.contains("YoungGee")){
+                    compteur++;
                     Intent intent = new Intent(parent.getContext(), CarteYoungGee.class);
                     startActivity(intent);
                 }else if(selectedItem.contains("Jojo")){
+                    compteur++;
                     Intent intent = new Intent(parent.getContext(), CarteJoJo.class);
                     startActivity(intent);
                 }
@@ -67,6 +77,7 @@ public class GoodPassword extends AppCompatActivity {
         });
 
     }
+
 
     public void click(View v){
 

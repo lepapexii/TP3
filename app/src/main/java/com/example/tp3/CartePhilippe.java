@@ -3,6 +3,7 @@ package com.example.tp3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -22,10 +23,12 @@ public class CartePhilippe extends AppCompatActivity {
 
         EditText nv = findViewById(R.id.score);
         int note = Integer.parseInt(nv.getText().toString()) ;
-        MainActivity.setDefaults("note",note,this);
 
         Intent intent = new Intent(this, GoodPassword.class);
+
+        MainActivity.tabResultat[0] = note;
         startActivity(intent);
+
 
     }
 }

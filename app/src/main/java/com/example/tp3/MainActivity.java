@@ -14,40 +14,23 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.tp3.MESSAGE";
-    public SharedPreferences mspNom, mspPass, note;
+    static int[] tabResultat = new int[6];
+    public static SharedPreferences msp;
     TextView newNote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         newNote = findViewById(R.id.note);
-        note = getPreferences(Context.MODE_PRIVATE);
-        int ok = note.getInt("note",0);
+        msp = getPreferences(Context.MODE_PRIVATE);
+        int ok = msp.getInt("note",0);
         String str=Integer.toString(ok);
         newNote.setText(str);
 
 
     }
 
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        note = getPreferences(Context.MODE_PRIVATE);
-        int ok = note.getInt("note",0);
-        String str=Integer.toString(ok);
-        newNote.setText(str);
-    }
 
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        note = getPreferences(Context.MODE_PRIVATE);
-        int ok = note.getInt("note",0);
-        String str=Integer.toString(ok);
-        newNote.setText(str);
-
-    }
 
     public void methodeClic(View v){
 
@@ -75,9 +58,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void setNote() {
+    public static void setMsp(int ok){
 
-        newNote.setText(MainActivity.getDefaults("note",this));
+        //Pour définir ou modifier les SharedPreferences, il faut une référence sur un
+        //Editor.  Celle-ci est retournée par la méthode edit
+        SharedPreferences.Editor editeur = msp.edit();
+
+        //Pour définir ou modifier une SharedPreference, on utilise une méthode putType avec
+        //une clé et une valeur du type en question.
+        editeur.putInt("note",ok);
+
+        //La méthode apply est exécutée pour effectuer le changement.
+        editeur.apply();
     }
 
     public static void setDefaults(String key, int value, Context context) {

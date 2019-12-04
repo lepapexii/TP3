@@ -52,7 +52,8 @@
         <TextView
             android:id="@+id/note"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="test" />
+            android:layout_height="265dp"
+            android:text="test"
+            android:textSize="36sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
