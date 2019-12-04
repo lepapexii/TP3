@@ -25,31 +25,16 @@
         <ListView
             android:id="@+id/listView"
             android:layout_width="334dp"
-            android:layout_height="518dp" >
+            android:layout_height="518dp"
+            android:entries="@array/names">
 
-            <TextView
-                android:id="@+id/n1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nom1" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
         </ListView>
 
         <Button
-            android:id="@+id/return"
+            android:id="@+id/retour"
             android:layout_width="192dp"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:text="Retour au debut" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

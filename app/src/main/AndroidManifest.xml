@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GoodPassword"></activity>
+        <activity android:name=".CarteYoungGee"></activity>
+        <activity android:name=".CarteJoJo" />
+        <activity android:name=".CarteYohan" />
+        <activity android:name=".CarteEmmanuel" />
+        <activity android:name=".CartePhilippe" />
+        <activity android:name=".GoodPassword" />
         <activity android:name=".BadPassword" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -18,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText password = findViewById(R.id.passwordInput);
         String passwordText = password.getText().toString();
-        if(passwordText != "12345"){
+        if(!passwordText.equals("12345")){
             badPassword("l’accès n’est pas autorisé");
         }else{
             goodPassword(userNameText);

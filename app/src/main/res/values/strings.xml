@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">TP3</string>
-    <string name="nom1">Philippe Gauthier</string>
-    <string name="nom2">P2</string>
-    <string name="nom3">P3</string>
-    <string name="nom4">P4</string>
-    <string name="nom5">P5</string>
 
-
+    <string-array name="names">
+        <item>Philippe Gauthier</item>
+        <item>Emmanuel Non</item>
+        <item>Yohan OUI</item>
+        <item>YoungGee OK</item>
+        <item>Jojo Star</item>
+    </string-array>
 </resources>

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.TextView;
 
 public class BadPassword extends AppCompatActivity {
@@ -24,6 +25,12 @@ public class BadPassword extends AppCompatActivity {
 
         TextView tv = findViewById(R.id.fail);
         tv.setText(message);
+
+    }
+
+    public void back(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public static void setDefaults(String key, String value, Context context) {
